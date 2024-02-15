@@ -2,8 +2,8 @@
 {
     public abstract class Figure
     {
-        public virtual string Name { get; private set; }
-        public virtual string Color { get; private set; }
+        public  string Name { get; private set; }
+        public  string Color { get; private set; }
         protected double _p
         {
             get => Perimeter();
@@ -13,16 +13,13 @@
         protected double _s
         {
             get => Square();
-            set { } 
+            set { }
         }
         public virtual double Perimeter()
         { return _p; }
         public virtual double Square() 
         { return _s; 
         }
-
-
-
 
         public override string ToString()
         {

@@ -8,18 +8,15 @@ namespace ClassLibrary
 {
     public class Ring : Round
     {
-        public double Radius { get; private set; }
+        private double Radius { get; }
         private double _ringPerimeter;
         private double _ringSquare;
     
         public Ring(string ringName = "", string ringColor = "", double radius=0.0) : base(ringName, ringColor) {
           
             this.Radius = radius;
-            UpdatePerimeterAndSquareRing();
+        
         }
-        public override string Name => base.Name;
-
-        public override string Color => base.Color;
 
         public override double Perimeter()
         {
@@ -33,17 +30,13 @@ namespace ClassLibrary
             return _ringSquare;
         }
 
-        private void UpdatePerimeterAndSquareRing()
-        {
-            _p = base.Perimeter();
-            _s = base.Square();
-        }
+       
     }
 
     public class Rectangle : Parallelogramm
     {
-        public double Width { get; private set; }
-        public double Height { get; private set; }
+        public double Width { get;  }
+        public double Height { get;  }
 
         private double _rectanglePerimeter;
         private double _rectangleSquare;
@@ -52,11 +45,9 @@ namespace ClassLibrary
         {
             this.Width = width;
             this.Height = height;
-            UpdatePerimeterAndSquareRectangle();
+           
         }
-        public override string Name => base.Name;
 
-        public override string Color => base.Color;
         public override double Perimeter()  
         {
             _rectanglePerimeter=Width*2+Height*2;
@@ -67,19 +58,14 @@ namespace ClassLibrary
             _rectangleSquare = Width * Height;
             return _rectangleSquare;
         }
-        private void UpdatePerimeterAndSquareRectangle()
-     
-        {
-            _p = base.Perimeter();
-            _s = base.Square();
-        }
+    
 
     }
 
     public class Rhombus : Parallelogramm
     { 
-        public double Side {  get; private set; }
-        public double Height { get; private set; }
+        public double Side {  get; }
+        public double Height { get; }
 
         private double _rhombusPerimeter;
         private double _rhombusSquare;
@@ -89,11 +75,9 @@ namespace ClassLibrary
         {
             this.Side = side;
             this.Height = height;
-            UpdatePerimeterAndSquareRhombus();
+            
         }
-        public override string Name => base.Name;
 
-        public override string Color => base.Color;
         public override double Perimeter() 
         {
             _rhombusPerimeter = Side * 4;
@@ -105,16 +89,12 @@ namespace ClassLibrary
            return _rhombusSquare;
         }
 
-       private void  UpdatePerimeterAndSquareRhombus()
-        {
-            _p=base.Perimeter();
-            _s=base.Square();
-        }
+    
     }
 
     public class Quadrant : RegularnNgon
     { 
-        public double Side { get; private set; }
+        public double Side { get; }
 
         private double _quadrantPerimeter;
         private double _quadrantSquare;
@@ -122,12 +102,10 @@ namespace ClassLibrary
         public Quadrant(string quadrantName = "", string quadrantColor="", double side = 0.0):base(quadrantName,quadrantColor)
         { 
             this.Side = side;
-            UpdatePerimeterAndSquareQuadrant();
+            
 
         }
-        public override string Name => base.Name;
 
-        public override string Color => base.Color;
 
         public override double Perimeter()
         {
@@ -141,20 +119,16 @@ namespace ClassLibrary
             return _quadrantSquare;
         }
 
-        private void UpdatePerimeterAndSquareQuadrant()
-        {
-            _p = base.Perimeter();
-            _s=base.Square();
-        }
+
     }
 
     public class Triangle: RegularnNgon
     {
-        public double Basis { get; private set; }
+        public double Basis { get; }
 
-        public double Side1 {  get; private set; }
+        public double Side1 {  get; }
 
-        public double Side2 {  get; private set; }
+        public double Side2 {  get; }
        
 
         private double _trianglePerimeter;
@@ -165,13 +139,9 @@ namespace ClassLibrary
             this.Basis = basis;
             this.Side1 = side1;
             this.Side2 = side2;
-            UpdatePerimeterAndSquareTriangle();
-
+        
         }
 
-        public override string Name => base.Name;
-
-        public override string Color => base.Color;
 
         public override double Perimeter()
         {
@@ -185,11 +155,7 @@ namespace ClassLibrary
             _triangleSquare = Math.Sqrt(p * (p - Basis) * (p - Side1) * (p - Side2));
             return _triangleSquare;
         }
-        private void UpdatePerimeterAndSquareTriangle()
-        {
-            _p=base.Perimeter();
-            _s=base.Square();
-        }
+
 
     }
 
